@@ -7,18 +7,35 @@ using UnityEngine;
 
 public class LoadDataScript : MonoBehaviour
 {
+    public GameObject GraphPrefab;
+    public GameObject DataPrefab;
+    public GameObject DataObjectPrefab;
+
+    public GameObject newGraph;
+    private int numFilesLoaded = 0;
+
     static float OBJECT_SCALE = 0.6f;
 
-    public static void LoadDataFromFiles(string[] input_files)
+    public void CreateGraph()
     {
+        newGraph = Instantiate(GraphPrefab, new Vector3(0, 0, 0), Quaternion.Euler(0, 0, 0));
+
+    }
+
+    public void LoadDataFromFiles(string[] input_files)
+    {
+        //nekwGraph = new GraphPrefab;
+        //Instantiate(graph);
+
         foreach (string file in input_files)
         {
             Color random_color = UnityEngine.Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);
             LoadFileIntoGraph(file);
+            numFilesLoaded++;
         }
     }
 
-    public static void LoadFileIntoGraph(string input_file)
+    public void LoadFileIntoGraph(string input_file)
     {
         List<string> column_names = new List<string>();
 
@@ -58,8 +75,8 @@ public class LoadDataScript : MonoBehaviour
 
                         //for (int column = 0; column < column_names.Count; column++)
                         //{
-                            // Add each element to its corresponding column
-                            //data.GetComponent<DataScript>().AddDataRow(column_names[column], float.Parse(split_line[column]));
+                        // Add each element to its corresponding column
+                        //data.GetComponent<DataScript>().AddDataRow(column_names[column], float.Parse(split_line[column]));
                         Vector3 dataPosition = new Vector3(float.Parse(split_line[0]), float.Parse(split_line[1]), float.Parse(split_line[2]));
                         GameObject dataPoint = GameObject.CreatePrimitive(PrimitiveType.Sphere);
                         dataPoint.transform.position = dataPosition;
@@ -68,6 +85,8 @@ public class LoadDataScript : MonoBehaviour
                         Color random_color = UnityEngine.Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);
                         dataPoint.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", random_color);
                         dataPoint.GetComponent<MeshRenderer>().material.EnableKeyword("_EMISSION");
+
+                        GameObject data = Instantiate(DataObjectPrefab, new Vector3(0, 0, 0), Quaternion.Euler(0, 0, 0));
 
 
 
@@ -86,5 +105,15 @@ public class LoadDataScript : MonoBehaviour
             Debug.Log(e.Message);
 
         }
+    }
+
+    public GameObject GetGraphObject()
+    {
+        return newGraph;
+    }
+
+    public int GetNumFilesLoaded()
+    {
+        return numFilesLoaded;
     }
 }

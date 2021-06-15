@@ -4,15 +4,27 @@ using UnityEngine;
 
 public class GraphScript : MonoBehaviour
 {
-    // Start is called before the first frame update
+
+    public List<GameObject> dataCollection;
+    public static int num_data = 0;
+
+
     void Start()
     {
-        
+        dataCollection = new List<GameObject>();
     }
 
-    // Update is called once per frame
-    void Update()
+
+    public void AddData(GameObject data)
     {
-        
+        dataCollection.Add(data);
+        num_data++;
     }
+
+    public static int GetNumData()
+    {
+        return num_data;
+    }
+
+
 }

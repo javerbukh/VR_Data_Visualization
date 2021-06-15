@@ -10,9 +10,16 @@ public class TestFileLoad
     [Test]
     public void TestFileLoadSimplePasses()
     {
-        string[] input_files = new[] { "Assets/Project/Resources/test.txt" };
-        LoadDataScript.LoadDataFromFiles(input_files);
+        //string[] input_files = new[] { "Assets/Project/Resources/test.txt" };
+        //LoadDataScript.LoadDataFromFiles(input_files);
 
+        //GameObject graph = GameObject.Find("GraphPrefab");
+        //LoadDataScript.getGraphObject().GetComponent<GraphScript>().GetNumData();
+
+        //int graphNumData = graph.GetComponent<GraphScript>().GetNumData();
+        int numData = GraphScript.GetNumData();
+
+        Assert.AreEqual(numData, 0);
         //int x = 1;
         //Assert.AreEqual(x, 1);
 

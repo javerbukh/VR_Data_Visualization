@@ -43,3 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9b82e9dc5999144c83afc5e889e8f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GraphPrefab: {fileID: 2231088304302754897, guid: 29118da050daaff4e988426102e17e27, type: 3}
+  DataPrefab: {fileID: 659857799870885137, guid: fb374e372322083418bc3e7ba882256e, type: 3}
+  DataObjectPrefab: {fileID: 8634599477865456284, guid: b29cb9665778b9145b079c1cdc53b807, type: 3}
