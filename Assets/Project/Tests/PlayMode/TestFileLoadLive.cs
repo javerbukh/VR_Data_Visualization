@@ -46,5 +46,6 @@ public class TestFileLoadLive
 
         //Assert.AreEqual(numFilesLoadedBefore, 0);
         Assert.AreEqual(numFilesLoaded, 1);
+
     }
 }

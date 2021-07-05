@@ -46,3 +46,6 @@ MonoBehaviour:
   GraphPrefab: {fileID: 2231088304302754897, guid: 29118da050daaff4e988426102e17e27, type: 3}
   DataPrefab: {fileID: 659857799870885137, guid: fb374e372322083418bc3e7ba882256e, type: 3}
   DataObjectPrefab: {fileID: 8634599477865456284, guid: b29cb9665778b9145b079c1cdc53b807, type: 3}
+  PlanetPrefab: {fileID: 3891155460661860173, guid: e2e93c6fc0ea82247b23dc01468bc785, type: 3}
+  mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  material: {fileID: 2100000, guid: ceacddd09c393da42b38b048186a82ae, type: 2}

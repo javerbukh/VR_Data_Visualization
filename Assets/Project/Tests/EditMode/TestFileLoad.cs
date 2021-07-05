@@ -19,7 +19,7 @@ public class TestFileLoad
         //int graphNumData = graph.GetComponent<GraphScript>().GetNumData();
         int numData = GraphScript.GetNumData();
 
-        Assert.AreEqual(numData, 0);
+        Assert.AreEqual(0, numData);
         //int x = 1;
         //Assert.AreEqual(x, 1);
 
