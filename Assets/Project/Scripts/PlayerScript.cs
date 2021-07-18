@@ -95,6 +95,43 @@ public class PlayerScript : MonoBehaviour
 
         }
 
+        if (Input.GetKey("left"))
+        {
+            // this.transform.Rotate(0.0f, -10.0f, 0.0f, Space.World);
+            this.transform.RotateAround(this.transform.position, this.transform.up, Time.deltaTime * -45);
+
+        }
+
+        if (Input.GetKey("right"))
+        {
+            //this.transform.Rotate(0.0f, 10.0f, 0.0f, Space.World);
+            this.transform.RotateAround(this.transform.position, this.transform.up, Time.deltaTime * 45);
+
+        }
+
+        KeyCode[] keyCodes = {
+            KeyCode.Alpha0,
+            KeyCode.Alpha1,
+            KeyCode.Alpha2,
+            KeyCode.Alpha3,
+            KeyCode.Alpha4,
+            KeyCode.Alpha5,
+            KeyCode.Alpha6,
+            KeyCode.Alpha7,
+            KeyCode.Alpha8,
+            KeyCode.Alpha9
+         };
+
+        for (int i = 0; i < keyCodes.Length; i++)
+        {
+            if (Input.GetKeyDown(keyCodes[i]))
+            {
+                float numberPressed = i * 1.0f;
+                this.transform.position = MoveTo(numberPressed, "");
+            }
+        }
+ 
+
     }
 
     public static int GetNumber()
@@ -110,5 +147,23 @@ public class PlayerScript : MonoBehaviour
     public static int GetNumFilesLoaded()
     {
         return loadData.GetComponent<LoadDataScript>().GetNumFilesLoaded();
+    }
+
+    public static Vector3 MoveTo(float num, String test)
+    {
+        float graph_size = 20.0f;
+        int graph_axes = 10;
+
+        if (!test.Equals("Test"))
+        {
+            graph_size = loadData.GetComponent<LoadDataScript>().GetGraphScale();
+            graph_axes = loadData.GetComponent<LoadDataScript>().GetGraphAxes();
+
+        }
+
+        float location = (num / graph_axes) * graph_size;
+
+        return new Vector3(location, location, location);
+
     }
 }

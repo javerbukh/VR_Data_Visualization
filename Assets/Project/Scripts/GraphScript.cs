@@ -48,19 +48,24 @@ public class GraphScript : MonoBehaviour
         return num_data;
     }
 
-    public void CreateAxes()
+    public float GetGraphSize()
     {
-        for (float x = 0; x < graph_size; x=x+(graph_size/10.0f))
+        return graph_size;
+    }
+
+    public void CreateAxes(int num_axes)
+    {
+        for (float x = 0; x < graph_size; x=x+(graph_size/ num_axes))
         {
             Instantiate(Block, new Vector3(x, 0, 0), Quaternion.identity);
 
         }
-        for (float y = 0; y < graph_size; y=y+(graph_size / 10.0f))
+        for (float y = 0; y < graph_size; y=y+(graph_size / num_axes))
         {
             Instantiate(Block, new Vector3(0, y, 0), Quaternion.identity);
 
         }
-        for (float z = 0; z < graph_size; z=z+(graph_size / 10.0f))
+        for (float z = 0; z < graph_size; z=z+(graph_size / num_axes))
         {
             Instantiate(Block, new Vector3(0, 0, z), Quaternion.identity);
 

@@ -18,16 +18,31 @@ public class LoadDataScript : MonoBehaviour
     public Mesh mesh;
     public Material material;
 
+    [SerializeField]
+    public float OBJECT_SCALE = 0.6f;
 
-    static float OBJECT_SCALE = 0.6f;
-    static float GRAPH_SCALE = 100.0f;
+    [SerializeField]
+    public float GRAPH_SCALE = 100.0f;
+
+    [SerializeField]
+    public int NUM_AXES = 10;
 
     public void CreateGraph()
     {
         graph = Instantiate(GraphPrefab, new Vector3(0, 0, 0), Quaternion.Euler(0, 0, 0));
         graph.GetComponent<GraphScript>().graph_size = GRAPH_SCALE;
-        graph.GetComponent<GraphScript>().CreateAxes();
+        graph.GetComponent<GraphScript>().CreateAxes(NUM_AXES);
 
+    }
+
+    public float GetGraphScale()
+    {
+        return GRAPH_SCALE;
+    }
+
+    public int GetGraphAxes()
+    {
+        return NUM_AXES;
     }
 
     public void LoadDataFromFiles(string[] input_files)
@@ -283,7 +298,7 @@ public class LoadDataScript : MonoBehaviour
             dataPoint.transform.parent = data.transform;
 
             dataPoint.transform.position = new_position;
-            dataPoint.transform.localScale = new Vector3(object_scale, object_scale, object_scale);
+            dataPoint.transform.localScale = new Vector3(OBJECT_SCALE, OBJECT_SCALE, OBJECT_SCALE);
 
             // Color random_color = UnityEngine.Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);
             dataPoint.GetComponent<MeshRenderer>().sharedMaterial.SetColor("_EmissionColor", sphere_color);

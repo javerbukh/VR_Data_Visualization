@@ -280,6 +280,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6999604733727553868, guid: bc8916d4555a4f240b1437e3fd9b92cb, type: 3}
+      propertyPath: m_ClearFlags
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6999604733727553868, guid: bc8916d4555a4f240b1437e3fd9b92cb, type: 3}
       propertyPath: far clip plane
       value: 100
       objectReference: {fileID: 0}
@@ -287,9 +291,25 @@ PrefabInstance:
       propertyPath: near clip plane
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 6999604733727553868, guid: bc8916d4555a4f240b1437e3fd9b92cb, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0.066037714
+      objectReference: {fileID: 0}
+    - target: {fileID: 6999604733727553868, guid: bc8916d4555a4f240b1437e3fd9b92cb, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0.042623397
+      objectReference: {fileID: 0}
+    - target: {fileID: 6999604733727553868, guid: bc8916d4555a4f240b1437e3fd9b92cb, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0.02772338
+      objectReference: {fileID: 0}
     - target: {fileID: 6999604733727553869, guid: bc8916d4555a4f240b1437e3fd9b92cb, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6999604733727553870, guid: bc8916d4555a4f240b1437e3fd9b92cb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc8916d4555a4f240b1437e3fd9b92cb, type: 3}

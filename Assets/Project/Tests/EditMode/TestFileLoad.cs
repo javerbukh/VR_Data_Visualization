@@ -20,6 +20,12 @@ public class TestFileLoad
         int numData = GraphScript.GetNumData();
 
         Assert.AreEqual(0, numData);
+
+        Vector3 newPos = PlayerScript.MoveTo(1, "Test");
+        float location = (1.0f / 10) * 20.0f;
+        Assert.AreEqual(new Vector3(location, location, location), newPos);
+
+
         //int x = 1;
         //Assert.AreEqual(x, 1);
 
