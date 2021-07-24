@@ -8,3 +8,4 @@ VR_Data_Visualization is a tool for loading files with 3D data (with X, Y, and Z
     :maxdepth: 2
 
     installation.rst
+    quickstart.rst
