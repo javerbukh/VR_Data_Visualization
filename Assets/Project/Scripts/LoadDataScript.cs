@@ -284,7 +284,7 @@ public class LoadDataScript : MonoBehaviour
             }
         }
 
-        for (int index = 0; index < file_row_count; index++)
+        for (int index = 0; index < 100000; index++)
         {
 
             Vector3 new_position = new Vector3(((data.GetComponent<DataScript>().data["x"][index]) - graph_mins["x"]) * scale_diff[x_col_index] + data.transform.position.x,
@@ -301,8 +301,11 @@ public class LoadDataScript : MonoBehaviour
             dataPoint.transform.localScale = new Vector3(OBJECT_SCALE, OBJECT_SCALE, OBJECT_SCALE);
 
             // Color random_color = UnityEngine.Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);
-            dataPoint.GetComponent<MeshRenderer>().sharedMaterial.SetColor("_EmissionColor", sphere_color);
-            dataPoint.GetComponent<MeshRenderer>().sharedMaterial.EnableKeyword("_EMISSION");
+            if (index == 0)
+            {
+                dataPoint.GetComponent<MeshRenderer>().sharedMaterial.SetColor("_EmissionColor", sphere_color);
+                dataPoint.GetComponent<MeshRenderer>().sharedMaterial.EnableKeyword("_EMISSION");
+            }
 
             // MUCH SLOWER
             //dataPoint.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", sphere_color);

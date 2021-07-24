@@ -9,7 +9,8 @@
     "com.unity.timeline": "1.4.7",
     "com.unity.ugui": "1.0.0",
     "com.unity.xr.management": "4.0.7",
-    "com.unity.xr.openxr": "1.0.3",
+    "com.unity.xr.openxr": "1.2.3",
+    "com.valvesoftware.unity.openvr": "file:C:/Users/javer/Downloads/com.valvesoftware.unity.openvr-1.1.4.tgz",
     "com.unity.modules.ai": "1.0.0",
     "com.unity.modules.androidjni": "1.0.0",
     "com.unity.modules.animation": "1.0.0",
@@ -42,14 +43,5 @@
     "com.unity.modules.wind": "1.0.0",
     "com.unity.modules.xr": "1.0.0"
   },
-  "scopedRegistries": [
-    {
-      "name": "Valve",
-      "url": "https://registry.npmjs.org/",
-      "scopes": [
-        "com.valvesoftware",
-        "com.valvesoftware.openvr"
-      ]
-    }
-  ]
+  "scopedRegistries": []
 }
