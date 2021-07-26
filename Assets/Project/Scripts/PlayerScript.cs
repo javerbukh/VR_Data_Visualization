@@ -30,7 +30,7 @@ public class PlayerScript : MonoBehaviour
             // string[] input_files = new[] { "Assets/Project/Resources/test.txt" };
             //string[] input_files = new[] { "Assets/Project/Resources/gaia_data.txt" };
             //string[] input_files = new[] { "Assets/Project/Resources/gaia_200lyr.txt", "Assets/Project/Resources/gaia_data.txt" };
-            string[] input_files = new[] { "Assets/Project/Resources/gaia_500lyr.txt" };
+            string[] input_files = new[] { "Assets/Project/Resources/gaia_200lyr.txt" };
 
 
             //currentFileReader.GetComponent<FileReaderScript>().LoadDataFromFiles(currentGraph, input_files);
@@ -83,13 +83,13 @@ public class PlayerScript : MonoBehaviour
 
         }
 
-        if (Input.GetKey("up"))
+        if (Input.GetKeyDown("up"))
         {
             MOVE_SPEED = MOVE_SPEED * 2;
 
         }
 
-        if (Input.GetKey("down"))
+        if (Input.GetKeyDown("down"))
         {
             MOVE_SPEED = MOVE_SPEED / 2;
 

@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class Planet : MonoBehaviour
 {
+
+    public Material material;
+    
     [SerializeField]
     [Range(2, 256)]
-    public int resolution = 10;
+    public int resolution = 2;
 
     [SerializeField, HideInInspector]
     MeshFilter[] meshFilters;
@@ -35,7 +38,7 @@ public class Planet : MonoBehaviour
                 GameObject meshObj = new GameObject("mesh");
                 meshObj.transform.parent = transform;
 
-                meshObj.AddComponent<MeshRenderer>().sharedMaterial = new Material(Shader.Find("Standard"));
+                meshObj.AddComponent<MeshRenderer>().sharedMaterial = material;
                 meshFilters[i] = meshObj.AddComponent<MeshFilter>();
                 meshFilters[i].sharedMesh = new Mesh();
             }

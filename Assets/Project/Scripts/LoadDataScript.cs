@@ -284,7 +284,7 @@ public class LoadDataScript : MonoBehaviour
             }
         }
 
-        for (int index = 0; index < 100000; index++)
+        for (int index = 0; index < file_row_count; index++)
         {
 
             Vector3 new_position = new Vector3(((data.GetComponent<DataScript>().data["x"][index]) - graph_mins["x"]) * scale_diff[x_col_index] + data.transform.position.x,
@@ -292,7 +292,7 @@ public class LoadDataScript : MonoBehaviour
                 ((data.GetComponent<DataScript>().data["z"][index]) - graph_mins["z"]) * scale_diff[z_col_index] + data.transform.position.z);
 
             GameObject dataPoint = Instantiate(PlanetPrefab);
-            dataPoint.GetComponent<Planet>().resolution = 2;
+            dataPoint.GetComponent<Planet>().resolution = 100;
             dataPoint.name = "datapoint_" + index.ToString();
 
             dataPoint.transform.parent = data.transform;
@@ -300,7 +300,6 @@ public class LoadDataScript : MonoBehaviour
             dataPoint.transform.position = new_position;
             dataPoint.transform.localScale = new Vector3(OBJECT_SCALE, OBJECT_SCALE, OBJECT_SCALE);
 
-            // Color random_color = UnityEngine.Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);
             if (index == 0)
             {
                 dataPoint.GetComponent<MeshRenderer>().sharedMaterial.SetColor("_EmissionColor", sphere_color);
@@ -308,7 +307,8 @@ public class LoadDataScript : MonoBehaviour
             }
 
             // MUCH SLOWER
-            //dataPoint.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", sphere_color);
+            //Color random_color = UnityEngine.Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);
+            //dataPoint.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", random_color);
             //dataPoint.GetComponent<MeshRenderer>().material.EnableKeyword("_EMISSION");
 
 

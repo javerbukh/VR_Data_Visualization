@@ -29,8 +29,9 @@ public class TestFileLoadLive
 
         //player.GetComponent<PlayerScript>().LoadData(input_files);
         //PlayerScript.PublicStart();
-        //int numFilesLoadedBefore = PlayerScript.GetNumFilesLoaded();
+        int numFilesLoadedBefore = PlayerScript.GetNumFilesLoaded();
         int numFilesLoaded = PlayerScript.GetNumber();
+        
 
         //PlayerScript.LoadData(input_files);
 

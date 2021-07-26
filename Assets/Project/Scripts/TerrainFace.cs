@@ -5,7 +5,7 @@ using UnityEngine;
 public class TerrainFace
 {
 
-    Mesh mesh;
+    Mesh mesh = null;
     int resolution;
     Vector3 localUp;
     Vector3 axisA;
@@ -50,13 +50,14 @@ public class TerrainFace
                 }
             }
         }
-        if (mesh)
+        if (mesh != null)
         {
             mesh.Clear();
             mesh.vertices = vertices;
             mesh.triangles = triangles;
             mesh.RecalculateNormals();
         }
+        
 
     }
 }

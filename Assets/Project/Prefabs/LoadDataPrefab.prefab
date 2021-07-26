@@ -50,5 +50,5 @@ MonoBehaviour:
   mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
   material: {fileID: 2100000, guid: ceacddd09c393da42b38b048186a82ae, type: 2}
   OBJECT_SCALE: 0.3
-  GRAPH_SCALE: 250
+  GRAPH_SCALE: 100
   NUM_AXES: 10
